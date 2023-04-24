@@ -1,9 +1,11 @@
 import './App.css'
+import useRouteElements from './useRouteElements'
 
 function App() {
+  const routeElements = useRouteElements()
   return (
-    <div className='App text-red-600'>
-      <h1>Shopee clone</h1>
+    <div className=''>
+      <h1>{routeElements}</h1>
     </div>
   )
 }
