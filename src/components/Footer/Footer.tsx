@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className='bg-slate-50 py-16'>
-      <div className='mx-auto max-w-7xl px-4'>
+      <div className='container'>
         <div className='gird-cols-1 grid gap-4 text-sm lg:grid-cols-3'>
           <div className='lg:col-span-1'>© 2023 Shopee. Tất cả các quyền được bảo lưu.</div>
           <div className='lg:col-span-2'>
@@ -16,7 +16,6 @@ export default function Footer() {
           <span>CHÍNH SÁCH TRẢ HÀNG VÀ HOÀN TIỀN</span>
         </div>
         <div className='mt-10 flex items-center justify-center gap-10'>
-          <img className='w-30 h-12' src='http://online.gov.vn/Content/EndUser/LogoCCDVSaleNoti/logoCCDV.png' alt='' />
           <img className='w-30 h-12' src='http://online.gov.vn/Content/EndUser/LogoCCDVSaleNoti/logoCCDV.png' alt='' />
           <img className='w-30 h-12' src='http://online.gov.vn/Content/EndUser/LogoCCDVSaleNoti/logoCCDV.png' alt='' />
         </div>

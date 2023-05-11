@@ -1,30 +1,45 @@
+import { yupResolver } from '@hookform/resolvers/yup'
+import { useForm } from 'react-hook-form'
 import { Link } from 'react-router-dom'
+import Input from 'src/components/Input'
+import { Schema, schema } from 'src/utils/rules'
+
+type FormData = Pick<Schema, 'email' | 'password'>
+const loginSchema = schema.pick(['email', 'password'])
 
 export const Login = () => {
+  const {
+    register,
+    formState: { errors },
+    handleSubmit
+  } = useForm<FormData>({ resolver: yupResolver(loginSchema) })
+  const handleOnSubmit = handleSubmit((data) => {
+    console.log(data)
+  })
   return (
     <div className='bg-[#ee4d2d]'>
       <div className="mx-auto max-w-7xl bg-[url('https://down-vn.img.susercontent.com/file/sg-11134004-7qvd5-lfuyd509f57p08')] bg-contain bg-center bg-no-repeat py-4">
         <div className='grid grid-cols-1 py-12 lg:grid-cols-5 lg:py-32 lg:pr-10'>
           <div className='lg:col-span-2 lg:col-start-4'>
-            <form className='rounded bg-white p-10 shadow-sm'>
+            <form onSubmit={handleOnSubmit} className='rounded bg-white p-10 shadow-sm'>
               <div className='text-2xl'>Đăng nhập</div>
               <div className='mt-8'>
-                <input
+                <Input
                   type='email'
                   name='email'
-                  className='w-full rounded-sm border border-gray-300 p-3 outline-none focus:border-gray-600 focus:shadow-sm'
+                  register={register}
+                  errorMessage={errors.email?.message}
                   placeholder='Email'
                 />
-                <div className='mt-1 min-h-[1rem] text-sm text-red-600'></div>
               </div>
               <div className='mt-3'>
-                <input
+                <Input
                   type='password'
                   name='password'
-                  className='w-full rounded-sm border border-gray-300 p-3 outline-none focus:border-gray-600 focus:shadow-sm'
+                  register={register}
+                  errorMessage={errors.password?.message}
                   placeholder='Password'
                 />
-                <div className='mt-1 min-h-[1rem] text-sm text-red-600'></div>
               </div>
               <div className='mt-3'>
                 <button className='w-full bg-red-500 px-2 py-4 text-center text-sm uppercase text-white hover:bg-red-600'>
