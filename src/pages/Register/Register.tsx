@@ -53,7 +53,7 @@ export const Register = () => {
       <div className="mx-auto max-w-7xl bg-[url('https://down-vn.img.susercontent.com/file/sg-11134004-7qvd5-lfuyd509f57p08')] bg-contain bg-center bg-no-repeat py-4">
         <div className='grid grid-cols-1 py-12 lg:grid-cols-5 lg:py-32 lg:pr-10'>
           <div className='lg:col-span-2 lg:col-start-4'>
-            <form onSubmit={handleOnSubmit} className='rounded bg-white p-10 shadow-sm'>
+            <form onSubmit={handleOnSubmit} className='rounded bg-white p-10 shadow-sm' noValidate>
               <div className='text-2xl'>Đăng ký</div>
               <div className='mt-8'>
                 <Input
