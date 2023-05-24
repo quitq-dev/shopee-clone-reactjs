@@ -1,14 +1,19 @@
 import { useRoutes } from 'react-router-dom'
-import Products from './pages/Products'
+import Main from './layouts/Main'
+import RegisterLayout from './layouts/Register'
 import Login from './pages/Login'
 import Register from './pages/Register'
-import RegisterLayout from './layouts/Register'
+import Products from './pages/Products'
 
 export default function useRouteElements() {
   const routeElements = useRoutes([
     {
       path: '/',
-      element: <Products />
+      element: (
+        <Main>
+          <Products />
+        </Main>
+      )
     },
     {
       path: '/login',
